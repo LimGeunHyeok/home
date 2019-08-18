@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>test</title>
+        <meta charset="utf-8">
+        <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+
+		<script>
+		$( document ).ready( function() {
+			
+			//header fixed
+		   var Offset = $( '.hd_middle' ).offset();
+
+		   $( window ).scroll( function() {
+				if ( $( document ).scrollTop() > Offset.top ) 
+				{
+					$( '.hd_middle' ).addClass( 'hdFixed' );
+					$( '.hd_bottom' ).addClass( 'hdmFixed' );
+				}
+				else 
+				{
+					$( '.hd_middle' ).removeClass( 'hdFixed' );
+					$( '.hd_bottom' ).removeClass( 'hdmFixed' );
+				}
+			});
+			
+			
+			//header menu toggle
+			$(".hdm_menu").click(function(){
+				$(".hd_bottom").toggle();
+			});
+			
+			
+			//login form submit
+			$( "#login" ).submit(function() {
+				
+				var mb_id = $(this).find('[name=mb_id]').val();
+				var mb_passwd = $(this).find('[name=mb_passwd]').val();
+				
+				if(mb_id == "")
+				{
+					alert("아이디를 입력하세요.");
+					return false;
+				}
+				
+				if(mb_passwd == "")
+				{
+					alert("비밀번호를 입력하세요.");
+					return false;
+				}
+				
+				return true;
+			});	
+			
+			//join_basic form submit
+			$( "#join_basic" ).submit(function() {
+				
+				var mb_name = $(this).find('[name=mb_name]').val();
+				var mb_j_id = $(this).find('[name=mb_j_id]').val();
+				var mb_e_mail = $(this).find('[name=mb_e_mail]').val();
+				var mb_j_password = $(this).find('[name=mb_j_password]').val();
+				var mb_j_password_r = $(this).find('[name=mb_j_password_r]').val();
+				
+				if(mb_name == "")
+				{
+					alert("이름을 입력하세요.");
+					return false;
+				}
+				
+				if(mb_j_id == "")
+				{
+					alert("아이디를 입력하세요.");
+					return false;
+				}
+				
+				if(mb_e_mail == "")
+				{
+					alert("이메일을 입력하세요.");
+					return false;
+				}
+				
+				if(mb_j_password == "")
+				{
+					alert("비밀번호를 입력하세요.");
+					return false;
+				}
+				
+				if(mb_j_password_r == "")
+				{
+					alert("비밀번호를 확인하세요.");
+					return false;
+				}
+				
+				return true;
+			});	
+			
+			
+		});
+		</script>		
+		
+	</head>
+	
+	<body>
+	
+		<!--wrap-->
+		<div class = "wrap">
+			<!--header-->
+			<div class = "header">
+				<div class = "hd_top">
+					(주)해피핀테크대부 2017-금감원-1280(P2P연계대부업)
+				</div>
+				
+				<div class = "hd_middle">
+					<div class = "hdm_in">
+						<div class = "hdm_logo cursor_btn href_home">
+							<img src = "http://test.happyfunding.kr/images/logo.png">
+						</div>
+						
+						<div class = "hdm_menu">
+							<ul>
+								<li class = "cursor_btn">투자하기</li>
+								<li class = "cursor_btn">대출신청</li>
+								<li class = "cursor_btn">회사소개</li>
+								<li class = "cursor_btn">서비스안내</li>
+							</ul>
+						</div>
+						
+						<div class = "hdm_login_info">
+							<ul>
+								<li class = "cursor_btn href_login">로그인</li>
+								<li class = "cursor_btn href_join">회원가입</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				
+				<div class = "hd_bottom">
+					<div class = "hdb_menu">
+						<ul>
+							<li class = "cursor_btn">해피펀딩</li>
+							<li class = "cursor_btn">해피뉴스</li>
+							<li class = "cursor_btn">안전투자프로세스</li>
+						</ul>
+						<ul>
+							<li class = "cursor_btn">이용안내</li>
+							<li class = "cursor_btn">공지사항</li>
+							<li class = "cursor_btn">FAQ</li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+			<!--header-->
+			
+			<!--center-->
+			<div class = "content">
+				
+				<div class = "c_top">
+				    <div class="ct_top">
+                        <ul>
+                            <li>저금리시대 재테크는 필수</li>
+                            <li>자산키우기 프로젝트를 위한</li>
+                            <li>행복한 선택 해피펀딩</li>
+                            <li>투자상품 바로가기</li>
+                            <li>대출상품 바로가기</li>
+                        </ul>
+                        <div class="ct_bottom">
+                            <div class="ctb_in">
+                                <img src="images/noti.png" alt="noti_icon">
+                                <ul class="m_noti">
+                                    <li>공지사항입니다.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+				
+				<div class = "c_middle">
+                    <div class="cm_top">
+                        <div class="cmt_top">
+                            <div class="cmtt_top">
+                                <p class="h1">해피펀딩 보고서</p>
+                                <ul>
+                                    <li>누적 대출액</li>
+                                    <li>잔여 대출액</li>
+                                    <li>누적 상환액</li>
+                                    <li>평균 수익률</li>
+                                    <li>펀드 연체율</li>
+                                    <li>펀드 부실율</li>
+                                </ul>
+                                <ul>
+                                    <li>0원</li>
+                                    <li>0원</li>
+                                    <li>0원</li>
+                                    <li>0%</li>
+                                    <li>0%</li>
+                                    <li>0%</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    <div class="cm_middle">
+						<div class="in">
+							<div class="cmmi_left">
+								<ul>
+									<li>해피펀딩에 가입을 안하셨나요?</li>
+									<li>지금 가입하시고 해피펀딩의 투자와</li>
+									<li>이벤트 등등 다양한 정보를 받아보세요</li>
+									<li><button class="join_href">회원가입</button></li>
+								</ul>
+							</div>
+							
+							<div class="cmmi_right">
+								<ul>
+									<li>투자 또는 대출이 궁금하신가요?</li>
+									<li>대표적인 궁금증은 FAQ에서 확인할 수 있으며</li>
+									<li>추가로 궁금하거나 문의주시고 싶은 내용이 있으시면</li>
+									<li>02)3472-8088 전화문의 or 카카오톡 플러스친구를 통한</li>
+									<li>메세지문의로 연락주시면 성실하게 답변드리겠습니다.</li>
+									<li><button class="faq_href">FAQ 바로가기</button></li>
+								</ul>
+							</div>
+						</div>
+                    </div>
+                        
+                        <div class="cm_bottom">
+                            <div class="cmb_top">
+                                <p class="h1">해피펀딩인 이유</p>
+                                <img src="images/graph.jpg" alt="graph">
+                            </div>
+                            <div class="cmb_middle">
+                                <p>왜 해피펀딩 일까요?</p>
+                                <ul>
+                                    <li>저금리 시대 재테크가 선택이 아닌 필수인 시대가 오고있습니다.</li>
+                                    <li>그 재테크, 해피펀딩에서 시작하세요! 높은 수익률도 중요하지만 해피펀딩은 철저한 심사를 통해 위험요소가 적은 상품만 취급합니다.</li>
+                                </ul>
+                            </div>
+                            <div class="cmb_bottom">
+                                <p class="h1">5G시대 해피펀딩의 5G신념</p>
+                                <div class="cmtb_in">
+                                    <ul>
+                                        <li><img src="images/5g_ground.png" alt="ground" /></li>
+                                        <li><img src="images/5g_guard.png" alt="guard" /></li>
+                                        <li><img src="images/5g_gap.png" alt="gap" /></li>
+                                        <li><img src="images/5g_good.png" alt="good" /></li>
+                                        <li><img src="images/5g_grow.png" alt="grow"  /></li>
+                                    </ul>
+                                    <ul class="h1">
+                                        <li>Ground</li>
+                                        <li>Guard</li>
+                                        <li>Gap</li>
+                                        <li>Good</li>
+                                        <li>Grow</li>
+                                    </ul>
+                                    <ul>
+                                        <li>수익성이 좋은 부동산의 건축을 상품화 하겠습니다.</li>
+                                        <li>자금관리를 안전하게 하여 위험성을 낮추겠습니다.</li>
+                                        <li>다른 회사보다 차별화된 해피펀딩의 전략으로 차이를 보이겠습니다.</li>
+                                        <li>해피펀딩의 플랫폼이 좋은 브랜드라는 수식어가 생기도록 노력하겠습니다.</li>
+                                        <li>투자자와 대출자 그리고 회사 모두 성장할 수 있는 해피펀딩이 되겠습니다.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                
+                <div class = "c_bottom">
+                    <div class="cb_top">
+						<p class="h1">해피 펀드상품</p>
+                        <div class="cbt_left">
+                            <img src="images/fund1.jpg" alt="fund1" />
+                            <p class="txt_s_18px_b">[제 1호] 1차 서울 대림로 건축자금</p>
+                            <ul>
+                                <li>수익률</li>
+                                <li>투자기간</li>
+                                <li>투자등급</li>
+                                <li>모집금액</li>
+                            </ul>
+                            <ul>
+                                <li>연 13%</li>
+                                <li>3개월</li>
+                                <li>B1</li>
+                                <li>3억원</li>
+                            </ul>
+                        </div>
+                        <div class="cbt_center">
+                            <img src="images/fund1.jpg" alt="fund1" />
+                            <p class="txt_s_18px_b">[제 1호] 1차 서울 대림로 건축자금</p>
+                            <ul>
+                                <li>수익률</li>
+                                <li>투자기간</li>
+                                <li>투자등급</li>
+                                <li>모집금액</li>
+                            </ul>
+                            <ul>
+                                <li>연 13%</li>
+                                <li>3개월</li>
+                                <li>B1</li>
+                                <li>3억원</li>
+                            </ul>
+                        </div>
+                        <div class="cbt_right">
+                            <img src="images/fund1.jpg" alt="fund1" />
+                            <p class="txt_s_18px_b">[제 1호] 1차 서울 대림로 건축자금</p>
+                            <ul>
+                                <li>수익률</li>
+                                <li>투자기간</li>
+                                <li>투자등급</li>
+                                <li>모집금액</li>
+                            </ul>
+                            <ul>
+                                <li>연 13%</li>
+                                <li>3개월</li>
+                                <li>B1</li>
+                                <li>3억원</li>
+                            </ul> 
+                        </div>
+                    </div>
+                    <div class="cb_bottom">
+						<p class="h1">해피 펀드상품</p>
+                        <div class="cbb_left">
+                            <img src="images/news.jpg" alt="news" /> 
+                            <p class="txt_s_18px_b">해피펀딩 코리아 핀테크...</p>
+                            <span>대한민국의 첫 핀테크 박람회로 금융위에서 개최하여 대기업 중소기업 모든 핀테크 관계자가 모여 협약식 및 여러 행사와 핀테크의 발전방향에 대해 발표하는 자리였습니다....</span>
+                        </div>
+                        <div class="cbb_center">
+                            <img src="images/news.jpg" alt="news" /> 
+                            <p class="txt_s_18px_b">해피펀딩 코리아 핀테크...</p>
+                            <span>대한민국의 첫 핀테크 박람회로 금융위에서 개최하여 대기업 중소기업 모든 핀테크 관계자가 모여 협약식 및 여러 행사와 핀테크의 발전방향에 대해 발표하는 자리였습니다....</span>
+                        </div>
+                        <div class="cbb_right">
+                            <img src="images/news.jpg" alt="news" /> 
+                            <p class="txt_s_18px_b">해피펀딩 코리아 핀테크...</p>
+                            <span>대한민국의 첫 핀테크 박람회로 금융위에서 개최하여 대기업 중소기업 모든 핀테크 관계자가 모여 협약식 및 여러 행사와 핀테크의 발전방향에 대해 발표하는 자리였습니다....</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+			<!--center-->
+			
+			<!--footer {-->
+			<div class = "footer">
+				
+				<div class = "f_top">
+				    
+				</div>
+				
+				<div class = "f_middle">
+					<div class = "fm_in">
+                        <div class = "fmi_top">
+                            <p>고객센터 : 02-3472-8088</p>
+                            <p>등록 대부(중개)업체 통합조회 서비스 바로가기</p>
+                            <p>등록기관 : 금융감독원(1332)</p>
+                        </div>
+                        
+                        <div class = "fmi_center">
+                            <div class = "company">
+                                <div class = "cheon">
+                                    <p>
+										Cheon Bae<br />
+										(주)천배 <br />
+										대표자 : 김창주 ㅣ 사업자등록번호 : 717-81-00747 <br /> 
+										통신판매업신고번호 : 제2017-서울양천-0330호 
+									</p>
+                                </div>
+								
+                                <div class = "fintech">
+                                    <p>
+										HappyFintechloan<br />
+										(주)해피핀테크대부 <br />
+										대표자 : 김창주 ㅣ 사업자등록번호 : 412-88-00666 <br />
+										P2P연계대부업 : 2017-금감원-1280
+									</p>
+                                </div>
+                            </div>
+                        </div>
+						
+                        <div class = "fmi_bottom">
+                            <p class = "warning">
+								대출금리 연 18%이내 (연체금리 연 24%이내)플랫폼 이용료, 법무비 등 부대비용 별도 부담입니다.<br />
+								채무의 조기상환 수수료 등 조기상환 조건이 적용 될 수 있습니다. 중개수수료를 요구하거나 받는 행위는 불법입니다.<br />
+								대출시 귀하의 신용등급이 하락할 수 있습니다. 과도한 빚은 당신에게 큰 불행을 안겨줄 수 있습니다.<br />
+								※해피펀딩(주)천배는 투자원금과 수익을 보장하지 않으며, 투자손실에 대한 책임은 모두 투자자에게 있습니다.
+							</p>
+                        </div>
+						
+                    </div>
+					
+				</div>
+				
+				<div class = "f_bottom">
+					Copyright© 2019.happyfunding.All rights reserved
+				</div>
+			</div>
+			<!--} footer-->
+			
+		</div>
+		<!--wrap-->
+	</body>
+</html>
